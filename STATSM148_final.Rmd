@@ -1,0 +1,68 @@
+---
+title: "STATS147_HW7"
+output: pdf_document
+date: "2024-03-04"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(tidyverse)
+```
+
+```{r}
+DF0 <- read_csv('kmeans_group_0f.csv')
+DF1 <- read_csv('kmeans_group_1f.csv')
+DF2 <- read_csv('kmeans_group_2f.csv')
+DF3 <- read_csv('kmeans_group_3f.csv')
+```
+
+```{r}
+means <- colMeans(DF0[,3:24], na.rm = TRUE)
+print(means)
+barplot(means)
+
+means <- colMeans(DF1[,3:24], na.rm = TRUE)
+print(means)
+barplot(means)
+
+means <- colMeans(DF2[,3:24], na.rm = TRUE)
+print(means)
+barplot(means)
+
+means <- colMeans(DF3[,3:24], na.rm = TRUE)
+print(means)
+barplot(means)
+
+```
+
+```{r}
+freq_table <- prop.table(table(DF0$Condition))
+
+barplot(freq_table, main = "Frequency Distribution", xlab = "Categories", ylab = "Frequency", col = "skyblue")
+
+freq_table <- prop.table(table(DF1$Condition))
+
+barplot(freq_table, main = "Frequency Distribution", xlab = "Categories", ylab = "Frequency", col = "skyblue")
+
+freq_table <- prop.table(table(DF2$Condition))
+
+barplot(freq_table, main = "Frequency Distribution", xlab = "Categories", ylab = "Frequency", col = "skyblue")
+
+freq_table <- prop.table(table(DF3$Condition))
+
+barplot(freq_table, main = "Frequency Distribution", xlab = "Categories", ylab = "Frequency", col = "skyblue")
+
+```
+
+
+
+
+
+
+
+
+
+
